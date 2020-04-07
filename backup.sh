@@ -3,6 +3,12 @@ date_name=$(date +"%F")
 backup_target=$1
 backup_file_name=$2
 drive_seed=$3
+case "$backup_target" in
+    "-h")
+       cat README.md
+       exit 0
+       ;;
+esac
 if ["$backup_target" ==""]; then
 	echo "Please provide backup target"
 	exit 1
